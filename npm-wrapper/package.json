@@ -1,0 +1,25 @@
+{
+  "name": "deviantart-mcp",
+  "version": "0.0.0",
+  "description": "MCP server for DeviantArt API",
+  "bin": {
+    "deviantart-mcp": "./bin/deviantart-mcp.js"
+  },
+  "scripts": {
+    "postinstall": "node scripts/install.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farquaad/deviantart-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "deviantart",
+    "model-context-protocol"
+  ],
+  "author": "farquaad",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16"
+  }
+}
