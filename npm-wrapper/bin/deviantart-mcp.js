@@ -1,4 +1,12 @@
 #!/usr/bin/env node
+const { spawn } = require("child_process");
+const path = require("path");
 
-// Thin shim to exec the downloaded Go binary and forward stdio/args
-// TODO: Implement child_process.spawn to exec binary and forward stdin/stdout/stderr and argv
+const ext = process.platform === "win32" ? ".exe" : "";
+const bin = path.join(__dirname, `deviantart-mcp${ext}`);
+
+const child = spawn(bin, process.argv.slice(2), { stdio: "inherit" });
+
+child.on("exit", (code) => {
+  process.exit(code ?? 0);
+});
